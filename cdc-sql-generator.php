@@ -1,14 +1,9 @@
 <?php
 
-namespace Exac\Cdc;
-
-require_once EXAC_MULTISITE_DATA_SYNC_PLUGIN_DIR . '/cdc-config.php';
-
 use \PDO;
 
 /**
  * Class Cdc_Create_Sql_Generator
- * @package Exac\Cdc
  */
 class Cdc_Create_Sql_Generator
 {
@@ -54,11 +49,10 @@ class Cdc_Create_Sql_Generator
 
 
 	/**
-	 * Exac_Multisite_Cdc_Sql_File_Creator constructor.
 	 */
 	public function __construct()
 	{
-		$this->path = EXAC_MULTISITE_DATA_SYNC_PLUGIN_DIR . '/sql/generated/';
+		$this->path = 'sql/generated/';
 
 		if ( !file_exists( $this->path ) ) {
 			mkdir( $this->path, 0755 );
